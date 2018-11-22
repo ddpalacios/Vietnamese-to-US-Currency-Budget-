@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+    <title>MoneyTracker</title>
+
+
+    <div id="div1">
+    </div>
+
+
+    <style>
+        #DataTable, td {
+    border: 1px solid black;
+    width: 850px;
+}   
+    </style>
+
+
+</head>
+
+
+
+
+<body onload="On_Start_browser()">
+    <p>
+        Welcome! Please select a BUDGET in <b>VND</b> ONLY. Then keep track of your daily purchases!
+    </p>
+
+    
+
+<form id="Budget" onsubmit="return false" >
+Enter Desired Budget: <input type = "text" name = "desiredBudget"><br>
+
+<input type = "button" onclick="DailyFunction()"value="Daily">
+
+
+<p></p>
+<input  type="submit" onclick="BudgetInput()" value="Submit">
+
+ 
+<hr>
+<p></p>
+
+</form>
+
+
+
+<form id="Input_Amount_and_Date"  onsubmit="return false">
+        AMOUNT: <input type="number" name="amount">
+        Select Day: <input type="date" name="datetime">
+        <input type = "submit" onclick="AddToJsonArray()" id = "ADD_TO_ARRAY" value="ADD">
+       
+        
+        <hr>
+</form>
+
+<p></p>
+<p></p>
+<p>Click the button to keep track of your finances. Click "Submit Day" to see your end results</p>
+
+<table id="myTable">
+  <tr>
+    <td> <b>Your Budget:</b> <span id="Your_Budget"></span></td>
+    <td> <b> What you have left(VND):</b> <span id="VND_Budget"></span></td>
+    <td> <b> What you have left (USD):</b> <span id="USD_Budget"></span></td>
+    <td> <b>Your daily Total(USD): </b> <span id="Total_From_USD"></span></td>
+    <td> <b>Date: </b><span id="curDate"></span></td>
+  </tr>
+  <p></p>
+  <p></p>
+
+  <table id = "Recorded_table"></table>
+
+
+  <table id = "Display_Table"></table> 
+  <table id = "Saved_Data_Table"></table>
+ 
+ 
+
+
+
+
+<br>
+
+<p><input type="button" id="saveData", value="Submit Day" onclick="SaveArray()"></p>
+    
+    <p> <span id="display"></span></p>
+    <input  type="submit" onclick="RemoveAll()" value="Delete ALL">
+
+    
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="code.js">
+</script>
+
+
+</html>
